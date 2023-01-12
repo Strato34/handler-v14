@@ -57,7 +57,7 @@ module.exports = class extends Client {
         await this.loadHandlers();
         await this.loadCommands();
         await this.loadSlashCommands();
-        await this.db.connect();
+       // await this.db.connect();
 
         this.login(process.env.BOT_TOKEN)
 
