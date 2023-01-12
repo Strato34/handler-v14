@@ -1,6 +1,6 @@
 module.exports = async (client, interaction) => {
     if (!interaction.guild || !interaction.channel) return;
-    const GUILD_DATA = await client.db.getGuildData(interaction.guild.id);
+    //const GUILD_DATA = await client.db.getGuildData(interaction.guild.id);
 
     const COMANDO = client.slashCommands.get(interaction?.commandName);
     
@@ -18,7 +18,8 @@ module.exports = async (client, interaction) => {
         }
 
         //ejecutar el comando
-        COMANDO.execute(client, interaction, "/", GUILD_DATA);
+        //COMANDO.execute(client, interaction, "/", GUILD_DATA);
+        COMANDO.execute(client, interaction, "/");
     }
 }
 
