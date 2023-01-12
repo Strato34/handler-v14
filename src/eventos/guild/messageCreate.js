@@ -1,6 +1,6 @@
 module.exports = async (client, message) => {
     if (!message.guild || !message.channel || message.author.bot) return;
-    const GUILD_DATA = await client.db.getGuildData(message.guild.id);
+    //const GUILD_DATA = await client.db.getGuildData(message.guild.id);
 
     if(!message.content.startsWith(GUILD_DATA.prefix)) return;
 
@@ -24,7 +24,8 @@ module.exports = async (client, message) => {
 
         try {
             //ejecutar el comando
-            COMANDO.execute(client, message, ARGS, GUILD_DATA.prefix, GUILD_DATA);
+           // COMANDO.execute(client, message, ARGS, GUILD_DATA.prefix, GUILD_DATA);
+           COMANDO.execute(client, message, ARGS, GUILD_DATA.prefix);
         } catch (e) {
             message.reply(`**Ha ocurrido un error al ejecutar el comando \`${COMANDO.NAME}\`**\n*Mira la consola para más detalle.*`);
             console.log(e);
