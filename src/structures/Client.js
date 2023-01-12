@@ -40,7 +40,7 @@ module.exports = class extends Client {
             ...options
         });
 
-        this.db = new Database()
+        //this.db = new Database()
 
         this.commands = new Collection();
         this.slashCommands = new Collection();
